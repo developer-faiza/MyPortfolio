@@ -31,6 +31,7 @@ import social from '../assets/social.png';
 import blog from '../assets/blog.png';
 import todo from '../assets/todo.png';
 import testp from '../assets/testp.png';
+import dwello from '../assets/dwello.png';
 
 export const skills = [
   'HTML',
@@ -279,6 +280,14 @@ export const projects = [
     image: blog,
     demo: 'https://graphcms-blog-eight-delta.vercel.app',
     github: 'https://github.com/developer-faiza/graphcms_blog'
+  },
+  {
+    title: 'Dwello Real-State Site',
+    tech: 'HTML + CSS + JS',
+    desc: 'Find your perfect property with our real estate website. Browse residential and commercial listings, compare options, and connect with trusted property agents.',
+    image: dwello,
+    demo: 'https://dwello-real-state-site.netlify.app',
+    github: 'https://github.com/developer-faiza/Dwello-Real-State-Site'
   },
   {
     title: 'Social Media App',
