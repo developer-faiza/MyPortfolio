@@ -122,9 +122,14 @@ export default function PortfolioTemplate() {
                 </button>
               </a>
 
-              <button className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
-                Download CV
-              </button>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300 inline-block"
+              >
+                View CV
+              </a>
             </div>
           </div>
 
