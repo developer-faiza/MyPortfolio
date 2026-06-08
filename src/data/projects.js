@@ -126,8 +126,8 @@ export const projects = [
     tech: 'HTML + CSS',
     desc: 'A premium restaurant website built with React.js featuring elegant UI design, smooth layouts, menu sections, and responsive components to deliver a modern restaurant web experience.',
     image: ecommerce,
-    demo: 'https://gericht-website-of-restaurant.netlify.app',
-    github: 'https://github.com/developer-faiza/Gericht-Restaurent-website'
+    demo: 'https://e-commerce-products-website.netlify.app',
+    github: 'https://github.com/developer-faiza/e-commerce-products-website'
   },
   {
     title: 'Facebook Clone',
