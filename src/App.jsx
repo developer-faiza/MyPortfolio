@@ -1,9 +1,28 @@
 import { useState } from 'react';
 import { projects, skills } from './data/projects';
 import fullstack from './assets/fullstack.png';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function PortfolioTemplate() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const form = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_7d4w0ph', 'template_fdnatpb', form.current, 'e-iX2aHyMa-KB14Eu')
+      .then(() => {
+        alert('Message sent successfully!');
+        form.current.reset();
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Failed to send message.');
+      });
+  };
 
   return (
     <div className="bg-[#490019] text-white min-h-screen font-sans scroll-smooth">
@@ -291,14 +310,14 @@ export default function PortfolioTemplate() {
           </p>
 
           <form
-            action="https://formsubmit.co/developerfaizamemon@gmail.com"
-            method="POST"
+            ref={form}
+            onSubmit={sendEmail}
             className="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-md"
           >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <input
                 type="text"
-                name="name"
+                name="from_name"
                 placeholder="Your Name"
                 className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none
                 focus:border-purple-500
@@ -307,7 +326,7 @@ export default function PortfolioTemplate() {
 
               <input
                 type="email"
-                name="email"
+                name="from_email"
                 placeholder="Your Email"
                 className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-purple-500"
               />
