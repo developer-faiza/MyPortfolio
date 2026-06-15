@@ -206,7 +206,7 @@ export const projects = [
     desc: 'A team management application for allocating members efficiently with interactive UI and responsive layouts.',
     image: images.team,
     demo: 'https://team-member-allocation1.netlify.app',
-    github: 'github.com/developer-faiza/Team-Member-Allocation'
+    github: 'https://github.com/developer-faiza/Team-Member-Allocation'
   },
   {
     title: 'Books',
