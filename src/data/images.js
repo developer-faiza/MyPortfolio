@@ -6,6 +6,7 @@ import foodpanda from '../assets/foodpanda.png';
 import gericht from '../assets/gericht.png';
 import fb from '../assets/fb.png';
 import gpt3 from '../assets/gpt3.png';
+import imgeditor from '../assets/imgeditor.png';
 import form from '../assets/form.png';
 import manage from '../assets/manage.png';
 import onepage from '../assets/onepage.png';
@@ -32,6 +33,8 @@ import blog from '../assets/blog.png';
 import todo from '../assets/todo.png';
 import testp from '../assets/testp.png';
 import dwello from '../assets/dwello.png';
+import snake from '../assets/snake.png';
+import kanban from '../assets/kanban.png';
 
 const images = {
   sm,
@@ -39,6 +42,8 @@ const images = {
   portfolio,
   dashboard,
   foodpanda,
+  imgeditor,
+  kanban,
   gericht,
   fb,
   gpt3,
@@ -67,6 +72,7 @@ const images = {
   blog,
   todo,
   testp,
-  dwello
+  dwello,
+  snake
 };
 export default images;

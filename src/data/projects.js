@@ -86,7 +86,7 @@ export const projects = [
     desc: 'Amazing GPT3 website beautifully designed.',
     image: images.gpt3,
     demo: 'https://gpt3-website-using-react.netlify.app',
-    github: 'https://github.com/developer-faiza/Gericht-Restaurent-website'
+    github: 'https://github.com/developer-faiza/gpt3-website-using-react'
   },
   {
     title: 'An E-Commerce shopping website',
@@ -121,6 +121,15 @@ export const projects = [
     github: 'https://github.com/developer-faiza/tailwind'
   },
   {
+    title: 'Snake game',
+    tech: 'HTML + CSS + JS',
+    desc: 'A simple Snake Game inspired by the classic Nokia mobile game. Control the snake, collect food to grow longer, and try to achieve the highest score without hitting the walls.The project focuses on basic game logic, user interaction, and a nostalgic gaming experience.',
+    image: images.snake,
+    demo: 'https://snake-gamme.netlify.app/',
+    github: 'https://github.com/developer-faiza/Snake-Game'
+  },
+
+  {
     title: 'Corona Tracker App',
     tech: 'React.js + Chart.js',
     desc: 'A COVID-19 tracker app displaying real-time statistics, charts, and country-wise data with an interactive and responsive interface.',
@@ -135,6 +144,14 @@ export const projects = [
     image: images.barbar,
     demo: 'https://barbarshop-web.netlify.app',
     github: 'https://github.com/developer-faiza/Barbar-Shop-Website'
+  },
+  {
+    title: 'Image Editor',
+    tech: 'HTML + CSS + JS',
+    desc: 'A powerful and easy-to-use image editor that lets you enhance photos with filters, apply preset effects, make quick adjustments, reset changes instantly, and download your edited images with ease.',
+    image: images.imgeditor,
+    demo: 'https://image-editorr1.netlify.app/',
+    github: 'https://github.com/developer-faiza/Image-Editor'
   },
   {
     title: 'One Page Website',
@@ -183,6 +200,14 @@ export const projects = [
     image: images.meals,
     demo: 'https://meals-application-vite.netlify.app',
     github: 'https://github.com/developer-faiza/Meals-Application'
+  },
+  {
+    title: 'Kanban Board',
+    tech: ' HTML + CSS + JS',
+    desc: 'Streamline your workflow by moving tasks through different stages and keeping everyone aligned.',
+    image: images.kanban,
+    demo: 'https://kanban-board-website.netlify.app/',
+    github: 'https://github.com/developer-faiza/Kanban-Board'
   },
   {
     title: 'Quiz Application',
