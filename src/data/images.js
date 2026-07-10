@@ -25,7 +25,7 @@ import eshop from '../assets/eshop.png';
 import reactportfolio from '../assets/reactportfolio.png';
 import books from '../assets/books.png';
 import cssgrid from '../assets/cssgrid.png';
-import restaurent from '../assets/restaurent.png';
+import restaurant1 from '../assets/restaurant1.png';
 import verticalslider from '../assets/verticalslider.png';
 import liveuserfilter from '../assets/liveuserfilter.png';
 import social from '../assets/social.png';
@@ -35,6 +35,9 @@ import testp from '../assets/testp.png';
 import dwello from '../assets/dwello.png';
 import snake from '../assets/snake.png';
 import kanban from '../assets/kanban.png';
+import blogweb from '../assets/blogweb.png';
+import restaurant from '../assets/restaurant.png';
+import todoreact from '../assets/todoreact.png';
 
 const images = {
   sm,
@@ -65,7 +68,7 @@ const images = {
   reactportfolio,
   books,
   cssgrid,
-  restaurent,
+  restaurant1,
   verticalslider,
   liveuserfilter,
   social,
@@ -73,6 +76,9 @@ const images = {
   todo,
   testp,
   dwello,
-  snake
+  snake,
+  blogweb,
+  restaurant,
+  todoreact
 };
 export default images;

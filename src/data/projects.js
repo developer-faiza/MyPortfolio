@@ -3,10 +3,10 @@ import images from './images';
 export const skills = [
   'HTML',
   'CSS',
-  'JavaScript',
   'React.js',
   'Next.js',
-  'Typescript',
+  'TypeScript',
+  'JavaScript',
   'Tailwind CSS',
   'SASS',
   'Node.js',
@@ -57,7 +57,7 @@ export const projects = [
   {
     title: 'Portfolio Website',
     tech: 'React + Sass',
-    desc: 'A portfolio website designed beautifully with react material-ui and sass',
+    desc: 'A modern portfolio website built with React, Material UI, and Sass, featuring responsive layouts and a clean, professional design.',
     image: images.reactportfolio,
     demo: 'https://react-portfolio-webb.netlify.app',
     github: 'https://github.com/developer-faiza/React-portfolio'
@@ -73,8 +73,8 @@ export const projects = [
   },
 
   {
-    title: 'Gericht Restaurant',
-    tech: 'React.js',
+    title: 'Gericht Restaurant (React)',
+    tech: 'React.js + CSS',
     desc: 'A premium restaurant website built with React.js featuring elegant UI design, smooth layouts, menu sections, and responsive components to deliver a modern restaurant web experience.',
     image: images.gericht,
     demo: 'https://gericht-website-of-restaurant.netlify.app',
@@ -83,18 +83,18 @@ export const projects = [
   {
     title: 'GPT3 Website',
     tech: 'React.js',
-    desc: 'Amazing GPT3 website beautifully designed.',
+    desc: 'A modern GPT-3 landing page built with React.js, featuring responsive sections, clean UI, and contemporary web design.',
     image: images.gpt3,
     demo: 'https://gpt3-website-using-react.netlify.app',
     github: 'https://github.com/developer-faiza/gpt3-website-using-react'
   },
   {
-    title: 'An E-Commerce shopping website',
+    title: 'E-Commerce Website',
     tech: 'HTML + CSS',
-    desc: 'A premium restaurant website built with React.js featuring elegant UI design, smooth layouts, menu sections, and responsive components to deliver a modern restaurant web experience.',
+    desc: 'Find everything you need with just a few clicks. We bring quality, affordability, and convenience together for the perfect shopping experience.',
     image: images.ecommerce,
-    demo: 'https://gericht-website-of-restaurant.netlify.app',
-    github: 'https://github.com/developer-faiza/Gericht-Restaurent-website'
+    demo: 'https://e-commerce-products-website.netlify.app/',
+    github: 'https://github.com/developer-faiza/e-commerce-products-website'
   },
   {
     title: 'Facebook Clone',
@@ -106,7 +106,7 @@ export const projects = [
   },
   {
     title: 'Registration Form',
-    tech: 'React.js + formik & yup',
+    tech: 'React.js + formik + yup',
     desc: 'Registration form using formik for form handling and yup for form validation.',
     image: images.form,
     demo: 'https://registration-form-with-formik-and-yup.netlify.app',
@@ -114,11 +114,19 @@ export const projects = [
   },
   {
     title: 'Manage Landing Page',
-    tech: 'HTML + JS + Tailwind Css',
+    tech: 'HTML + JS + Tailwind CSS',
     desc: 'A clean and modern landing page built with Tailwind CSS featuring responsive sections, smooth layouts, and interactive UI components.',
     image: images.manage,
     demo: 'https://managetailwind-landing-page.netlify.app',
     github: 'https://github.com/developer-faiza/tailwind'
+  },
+  {
+    title: 'Restaurant Website (React)',
+    tech: 'React + CSS + JS',
+    desc: 'A responsive restaurant website built with React.js, featuring dynamic menu filtering and a clean, modern user interface.',
+    image: images.restaurant,
+    demo: 'https://react-restaurant-web.netlify.app/',
+    github: 'https://github.com/developer-faiza/Restaurant'
   },
   {
     title: 'Snake game',
@@ -162,7 +170,15 @@ export const projects = [
     github: 'https://github.com/developer-faiza/OnePage-website'
   },
   {
-    title: 'The Foodies Website',
+    title: 'Blogs Website',
+    tech: 'React JS + CSS + API + JSON Server',
+    desc: 'A responsive blog application built with React.js that allows users to view, create, and delete blog posts. The project uses React Router for navigation, Fetch API for data handling, and JSON Server as a mock REST API.',
+    image: images.blogweb,
+    demo: '',
+    github: 'https://github.com/developer-faiza/Blogs-App'
+  },
+  {
+    title: 'Foodies Website',
     tech: 'HTML + CSS + JS',
     desc: 'A modern food website featuring attractive food sections, responsive layouts, and interactive UI elements for a better browsing experience.',
     image: images.foodies,
@@ -171,7 +187,7 @@ export const projects = [
   },
   {
     title: 'Youtube Clone',
-    tech: 'Rapid Api',
+    tech: 'RapidApi',
     desc: 'A YouTube clone application integrated with Rapid API to display videos, search functionality, and a modern responsive video browsing UI.',
     image: images.youtube,
     demo: 'https://yt-clone-website.netlify.app',
@@ -186,6 +202,14 @@ export const projects = [
     github: 'https://github.com/developer-faiza/Red-store-Ecommerce-Website'
   },
   {
+    title: 'To-Do List (React)',
+    tech: 'React.js + CSS',
+    desc: 'A clean and responsive To-Do application built with React.js that helps users organize and manage daily tasks efficiently. The app provides an intuitive interface to create, update, complete, and delete tasks, making task management simple and user-friendly.',
+    image: images.todoreact,
+    demo: 'https://todo-react-js11.netlify.app/',
+    github: 'https://github.com/developer-faiza/To-Do-React'
+  },
+  {
     title: 'Random Choices Picker',
     tech: 'JS',
     desc: 'A fun JavaScript application that randomly selects choices with smooth animations and an interactive user experience.',
@@ -195,7 +219,7 @@ export const projects = [
   },
   {
     title: 'Meals Application',
-    tech: 'ReactJS + Typescript',
+    tech: 'React.js + Typescript',
     desc: 'A meals application built with React and TypeScript featuring recipe browsing, meal categories, and responsive modern UI design.',
     image: images.meals,
     demo: 'https://meals-application-vite.netlify.app',
@@ -204,7 +228,7 @@ export const projects = [
   {
     title: 'Kanban Board',
     tech: ' HTML + CSS + JS',
-    desc: 'Streamline your workflow by moving tasks through different stages and keeping everyone aligned.',
+    desc: 'A Kanban board application that helps organize tasks by moving them across different workflow stages through an intuitive drag-and-drop interface.',
     image: images.kanban,
     demo: 'https://kanban-board-website.netlify.app/',
     github: 'https://github.com/developer-faiza/Kanban-Board'
@@ -244,7 +268,7 @@ export const projects = [
   {
     title: 'EShop',
     tech: 'React + Redux + Firebase',
-    desc: 'Fully Working beautifully designed website eShop e-commerce',
+    desc: 'A fully functional e-commerce application built with React, Redux, and Firebase, featuring authentication, shopping cart, and a modern responsive interface.',
     image: images.eshop,
     demo: 'https://eshop-ecommerce-website.netlify.app',
     github: 'https://github.com/developer-faiza/eShop'
@@ -258,7 +282,7 @@ export const projects = [
     github: 'https://github.com/developer-faiza/live-user-filter'
   },
   {
-    title: 'Css Grid',
+    title: 'CSS Grid',
     tech: 'HTML + CSS',
     desc: 'A CSS Grid layout project demonstrating responsive grid designs and modern web layout techniques.',
     image: images.cssgrid,
@@ -274,7 +298,7 @@ export const projects = [
     github: 'https://github.com/developer-faiza/graphcms_blog'
   },
   {
-    title: 'Dwello Real-State Site',
+    title: 'Dwello Real State Site',
     tech: 'HTML + CSS + JS',
     desc: 'Find your perfect property with our real estate website. Browse residential and commercial listings, compare options, and connect with trusted property agents.',
     image: images.dwello,
@@ -298,17 +322,17 @@ export const projects = [
     github: 'https://github.com/developer-faiza/test-project'
   },
   {
-    title: 'Restuarent',
+    title: 'Restaurant Landing Page (HTML/CSS)',
     tech: 'HTML + CSS',
     desc: 'A responsive restaurant website with elegant sections, menu displays, and a modern dining experience design.',
-    image: images.restaurent,
-    demo: 'https://restaurent-web1.netlify.app',
-    github: 'https://github.com/developer-faiza/restaurant-'
+    image: images.restaurant1,
+    demo: 'https://restaurant-web11.netlify.app',
+    github: 'https://github.com/developer-faiza/Restaurant-web'
   },
   {
     title: 'To Do List',
     tech: 'HTML + CSS + JS',
-    desc: 'A working to do App',
+    desc: 'A responsive to-do list application with task management, add/delete functionality, and a clean user interface.',
     image: images.todo,
     demo: 'https://a-to-do-list-web.netlify.app',
     github: 'https://github.com/developer-faiza/to-do-list'
