@@ -11,7 +11,7 @@ import form from '../assets/form.png';
 import manage from '../assets/manage.png';
 import onepage from '../assets/onepage.png';
 import covid19 from '../assets/covid19.png';
-import barbar from '../assets/barbar.png';
+import barber from '../assets/barber.png';
 import ecommerce from '../assets/ecommerce.png';
 import foodies from '../assets/foodies.png';
 import youtube from '../assets/youtube.png';
@@ -38,6 +38,8 @@ import kanban from '../assets/kanban.png';
 import blogweb from '../assets/blogweb.png';
 import restaurant from '../assets/restaurant.png';
 import todoreact from '../assets/todoreact.png';
+import weather from '../assets/weather.png';
+import figmatohtml from '../assets/figmatohtml.png';
 
 const images = {
   sm,
@@ -54,7 +56,7 @@ const images = {
   manage,
   onepage,
   covid19,
-  barbar,
+  barber,
   ecommerce,
   foodies,
   youtube,
@@ -79,6 +81,8 @@ const images = {
   snake,
   blogweb,
   restaurant,
-  todoreact
+  todoreact,
+  weather,
+  figmatohtml
 };
 export default images;

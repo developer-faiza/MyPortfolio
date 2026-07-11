@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { projects, skills } from './data/projects';
+import { projects, skills, categories } from './data/projects';
 import fullstack from './assets/fullstack.png';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function PortfolioTemplate() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const filteredProjects =
+    activeCategory === 'All'
+      ? projects
+      : projects.filter(project => project.category === activeCategory);
 
   const form = useRef();
 
@@ -181,7 +188,7 @@ export default function PortfolioTemplate() {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center">
-                <h3 className="text-3xl font-bold text-pink-400">20+</h3>
+                <h3 className="text-3xl font-bold text-pink-400">40+</h3>
                 <p className="text-gray-300 mt-2">Projects</p>
               </div>
 
@@ -225,8 +232,24 @@ export default function PortfolioTemplate() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
 
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-5 py-2 rounded-full transition ${
+                  activeCategory === category
+                    ? 'bg-pink-500 text-white'
+                    : 'bg-white/10 hover:bg-white/20'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <div
                 key={index}
                 className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:translate-y-8px transition duration-300"
