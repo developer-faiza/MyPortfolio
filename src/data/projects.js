@@ -34,8 +34,8 @@ export const projects = [
   {
     category: 'React',
     title: 'Dashboard',
-    tech: 'React.js + Chart.js + CSS',
-    desc: 'A modern admin dashboard UI built with React and Chart.js featuring analytics cards, charts, responsive layouts, and clean data visualization components for better user experience.',
+    tech: 'React.js + Recharts + Formik + Yup + Material UI + CSS',
+    desc: 'A modern admin dashboard built with React.js and Material UI featuring analytics charts, responsive data tables, calendar management, form validation, interactive dashboards, and a clean user-friendly interface.',
     image: images.dashboard,
     demo: 'https://dashboard-admin-web.netlify.app',
     github: 'https://github.com/developer-faiza/Admin-dashboard'
@@ -331,7 +331,7 @@ export const projects = [
   {
     category: 'React',
     title: 'Admin Dashboard',
-    tech: 'React.js + CSS',
+    tech: 'React.js + Recharts + Material UI + CSS',
     desc: 'A modern admin dashboard built with React.js featuring analytics cards, charts, and responsive management panels.',
     image: images.admindashboard,
     demo: 'https://admin-app-website.netlify.app',
