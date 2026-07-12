@@ -240,7 +240,7 @@ export default function PortfolioTemplate() {
                 className={`px-5 py-2 rounded-full transition ${
                   activeCategory === category
                     ? 'bg-pink-500 text-white'
-                    : 'bg-white/10 hover:bg-white/20'
+                    : 'bg-white/10 hover:bg-white/50'
                 }`}
               >
                 {category}

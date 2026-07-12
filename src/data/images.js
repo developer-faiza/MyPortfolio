@@ -40,6 +40,7 @@ import restaurant from '../assets/restaurant.png';
 import todoreact from '../assets/todoreact.png';
 import weather from '../assets/weather.png';
 import figmatohtml from '../assets/figmatohtml.png';
+import portfolio1 from '../assets/portfolio1.png';
 
 const images = {
   sm,
@@ -83,6 +84,7 @@ const images = {
   restaurant,
   todoreact,
   weather,
-  figmatohtml
+  figmatohtml,
+  portfolio1
 };
 export default images;

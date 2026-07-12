@@ -158,7 +158,7 @@ export const projects = [
     desc: 'A responsive FoodPanda website clone designed with modern layouts, food categories, banners, and clean UI sections. Optimized for mobile and desktop screens with an attractive design.',
     image: images.foodpanda,
     demo: 'https://foodpandawebsiteclone.netlify.app',
-    github: 'https://github.com/developer-faiza/foodpanda.'
+    github: 'https://github.com/developer-faiza/Foodpanda'
   },
 
   {
@@ -179,6 +179,7 @@ export const projects = [
     demo: 'https://gpt3-website-using-react.netlify.app',
     github: 'https://github.com/developer-faiza/gpt3-website-using-react'
   },
+
   {
     category: 'HTML/CSS',
     title: 'E-Commerce Website',
@@ -187,6 +188,15 @@ export const projects = [
     image: images.ecommerce,
     demo: 'https://e-commerce-products-website.netlify.app/',
     github: 'https://github.com/developer-faiza/e-commerce-products-website'
+  },
+  {
+    category: 'HTML/CSS',
+    title: 'Portfolio Website',
+    tech: 'HTML + CSS + Bootstrap + JS + jQuery',
+    desc: 'A responsive portfolio website built using HTML and CSS, featuring a modern layout, responsive design, portfolio showcase, services, and contact sections.',
+    image: images.portfolio1,
+    demo: 'https://portfolio-website-fm.netlify.app/',
+    github: 'https://github.com/developer-faiza/Portfolio'
   },
   {
     category: 'HTML/CSS',
@@ -335,7 +345,7 @@ export const projects = [
     desc: 'A modern admin dashboard built with React.js featuring analytics cards, charts, and responsive management panels.',
     image: images.admindashboard,
     demo: 'https://admin-app-website.netlify.app',
-    github: 'https://github.com/developer-faiza/Dashboard-'
+    github: 'https://github.com/developer-faiza/Dashboard'
   },
 
   {
