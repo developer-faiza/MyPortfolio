@@ -1,13 +1,60 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 import { projects, skills, categories } from './data/projects';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FiFolder, FiFileText, FiMail } from 'react-icons/fi';
 import fullstack from './assets/fullstack.png';
-import { useRef } from 'react';
+
 import emailjs from '@emailjs/browser';
 
 export default function PortfolioTemplate() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const [activeCategory, setActiveCategory] = useState('All');
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, []);
+
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(textRef.current, {
+      strings: ["Hi, I'm Faiza", 'Full Stack Web Developer', 'MERN Stack Learner'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      startDelay: 300,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   const filteredProjects =
     activeCategory === 'All'
@@ -19,15 +66,19 @@ export default function PortfolioTemplate() {
   const sendEmail = e => {
     e.preventDefault();
 
+    setLoading(true);
+
     emailjs
       .sendForm('service_7d4w0ph', 'template_fdnatpb', form.current, 'e-iX2aHyMa-KB14Eu')
       .then(() => {
         alert('Message sent successfully!');
         form.current.reset();
       })
-      .catch(error => {
-        console.error(error);
-        alert('Failed to send message.');
+      .catch(() => {
+        alert('Failed to Send!');
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -35,28 +86,63 @@ export default function PortfolioTemplate() {
     <div className="bg-[#490019] text-white min-h-screen font-sans scroll-smooth">
       <nav className="fixed top-0 w-full backdrop-blur-md bg-black/30 border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-linear-to-r from-white to-pink-500 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-pink-500 bg-clip-text text-transparent">
             Developer Faiza
           </h1>
 
           <div className="hidden md:flex gap-8 text-sm">
-            <a href="#home" className="hover:text-pink-400 transition">
+            <a
+              href="#home"
+              className={`pb-1 border-b-2 transition ${
+                activeSection === 'home'
+                  ? 'border-pink-500 text-pink-400'
+                  : 'border-transparent hover:text-pink-400'
+              }`}
+            >
               Home
             </a>
 
-            <a href="#about" className="hover:text-pink-400 transition">
+            <a
+              href="#about"
+              className={`pb-1 border-b-2 transition ${
+                activeSection === 'about'
+                  ? 'border-pink-500 text-pink-400'
+                  : 'border-transparent hover:text-pink-400'
+              }`}
+            >
               About
             </a>
 
-            <a href="#skills" className="hover:text-pink-400 transition">
+            <a
+              href="#skills"
+              className={`pb-1 border-b-2 transition ${
+                activeSection === 'skills'
+                  ? 'border-pink-500 text-pink-400'
+                  : 'border-transparent hover:text-pink-400'
+              }`}
+            >
               Skills
             </a>
 
-            <a href="#projects" className="hover:text-pink-400 transition">
+            <a
+              href="#projects"
+              className={`pb-1 border-b-2 transition ${
+                activeSection === 'projects'
+                  ? 'border-pink-500 text-pink-400'
+                  : 'border-transparent hover:text-pink-400'
+              }`}
+            >
               Projects
             </a>
 
-            <a href="#contact" className="hover:text-pink-400 transition">
+            <a
+              href="#contact"
+              className={`pb-1 border-b-2 transition ${
+                activeSection === 'contact'
+                  ? 'border-pink-500 text-pink-400'
+                  : 'border-transparent hover:text-pink-400'
+              }`}
+            >
               Contact
             </a>
           </div>
@@ -129,22 +215,23 @@ export default function PortfolioTemplate() {
           <div>
             <p className="text-pink-400 mb-4">Full Stack Web Developer</p>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
-              Hi, I'm{' '}
-              <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Faiza
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 min-h-90px">
+              <span className="bg-gradient-to-r from-pink-500 via-white-200 to-gray-300 bg-clip-text text-transparent">
+                <span ref={textRef}></span>
               </span>
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              I'm a passionate web developer currently learning MERN stack and building modern
-              responsive websites with new technologies.
+              I build modern, responsive, and user-friendly web applications using React, Tailwind
+              CSS, and the MERN stack. Passionate about creating clean UI and delivering great user
+              experiences.
             </p>
 
             <div className="flex gap-4 flex-wrap mx-9">
               <a href="#projects">
-                <button className="px-6 py-3 rounded-2xl bg-linear-to-r from-red-500 to-pink-500 hover:scale-105 transition duration-300">
-                  View Projects
+                <button className="px-6 py-3 rounded-2xl bg-gradient-to-r from-red-500 to-pink-500 hover:scale-105 transition duration-300 flex items-center gap-2">
+                  <FiFolder size={20} />
+                  <span>View Projects</span>
                 </button>
               </a>
 
@@ -152,16 +239,17 @@ export default function PortfolioTemplate() {
                 href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300 inline-block"
+                className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300 inline-flex items-center gap-2"
               >
-                View CV
+                <FiFileText size={20} />
+                <span>View CV</span>
               </a>
             </div>
           </div>
 
           <div className="flex justify-center">
             <div className="relative py-8">
-              <div className="absolute inset-0 bg-linear-to-r from-white to-pink-500 blur-2xl opacity-30 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-pink-500 blur-2xl opacity-30 rounded-full"></div>
 
               <img
                 src={fullstack}
@@ -216,14 +304,21 @@ export default function PortfolioTemplate() {
           <h2 className="text-4xl font-bold text-center mb-16">Skills</h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center hover:scale-105 hover:border-red-500 transition duration-300"
-              >
-                <p className="font-semibold">{skill}</p>
-              </div>
-            ))}
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center hover:scale-105 hover:border-red-500 transition duration-300"
+                >
+                  <div className="text-4xl text-pink-400 mb-3 flex justify-center">
+                    <Icon />
+                  </div>
+
+                  <p className="font-semibold">{skill.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -252,21 +347,25 @@ export default function PortfolioTemplate() {
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:translate-y-8px transition duration-300"
+                className="group rounded-3xl overflow-hidden bg-white/10 border border-white/10 hover:border-pink-500 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500"
               >
-                <div className="overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-pink-400 transition-colors duration-300">
+                    {project.title}
+                  </h3>
 
-                  <p className="text-pink-400 mb-4">{project.tech}</p>
-
+                  <div className="inline-block px-3 py-1 mb-4 rounded-full bg-pink-500/15 border border-white-500/30 text-pink-300 text-sm">
+                    {project.tech}
+                  </div>
                   <p className="text-gray-300 leading-relaxed mb-6">{project.desc}</p>
 
                   <div className="flex gap-4">
@@ -274,7 +373,7 @@ export default function PortfolioTemplate() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto px-4 py-2 rounded-xl bg-linear-to-r from-red-500 to-pink-500 text-sm hover:scale-105 transition duration-300"
+                      className="px-3 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-red-500 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/40 transition-all duration-300"
                     >
                       Live Demo
                     </a>
@@ -283,7 +382,7 @@ export default function PortfolioTemplate() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto px-4 py-2 rounded-xl border border-white/20 text-sm hover:bg-white/10 transition duration-300"
+                      className="px-6 py-2 rounded-xl border border-white/20 hover:bg-white/10 hover:border-pink-500 transition-all duration-300"
                     >
                       GitHub
                     </a>
@@ -342,6 +441,7 @@ export default function PortfolioTemplate() {
                 type="text"
                 name="from_name"
                 placeholder="Your Name"
+                required
                 className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none
                 focus:border-purple-500
                 "
@@ -351,6 +451,7 @@ export default function PortfolioTemplate() {
                 type="email"
                 name="from_email"
                 placeholder="Your Email"
+                required
                 className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-purple-500"
               />
             </div>
@@ -362,8 +463,12 @@ export default function PortfolioTemplate() {
               className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-purple-500 mb-6"
             ></textarea>
 
-            <button className="px-8 py-4 rounded-2xl bg-linear-to-r from-red-400 to-pink-500 hover:scale-105 transition duration-300">
-              Send Message
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-400 to-pink-500 hover:scale-105 transition duration-300"
+            >
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
             <input type="hidden" name="_captcha" value="false" />
           </form>
@@ -371,7 +476,7 @@ export default function PortfolioTemplate() {
       </section>
 
       <footer className="border-t border-white/10 py-10 px-6 text-center text-gray-300 bg-black/20">
-        <h2 className="text-2xl font-bold bg-linear-to-r from-white to-pink-500 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-pink-500 bg-clip-text text-transparent">
           Developer Faiza
         </h2>
 
@@ -383,6 +488,33 @@ export default function PortfolioTemplate() {
         <p className="text-sm text-gray-300 mt-6">
           © 2026 Developer Faiza Memon.Crafting modern and responsive web experiences!
         </p>
+
+        <div className="flex justify-center gap-6 mt-6 text-2xl">
+          <a
+            href="https://github.com/developer-faiza"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl p-3 rounded-full bg-white/10 hover:bg-pink-500 hover:scale-110 transition-all duration-300"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/developer-faiza-memon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl p-3 rounded-full bg-white/10 hover:bg-pink-500 hover:scale-110 transition-all duration-300"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="mailto:developerfaizamemon@gmail.com"
+            className="text-2xl p-3 rounded-full bg-white/10 hover:bg-pink-500 hover:scale-110 transition-all duration-300"
+          >
+            <FiMail />
+          </a>
+        </div>
       </footer>
     </div>
   );

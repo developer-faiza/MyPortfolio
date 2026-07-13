@@ -1,22 +1,43 @@
 import images from './images';
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaSass,
+  FaBootstrap,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub
+} from 'react-icons/fa';
+
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiVercel
+} from 'react-icons/si';
 
 export const skills = [
-  'HTML',
-  'CSS',
-  'Sass',
-  'Tailwind CSS',
-  'Bootstrap',
-  'JavaScript',
-  'TypeScript',
-  'React.js',
-  'Next.js',
-  'Node.js',
-  'Express.js',
-  'MongoDB',
-  'Firebase',
-  'Git',
-  'GitHub',
-  'Vercel'
+  { name: 'HTML', icon: FaHtml5 },
+  { name: 'CSS', icon: FaCss3Alt },
+  { name: 'Sass', icon: FaSass },
+  { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: 'Bootstrap', icon: FaBootstrap },
+  { name: 'JavaScript', icon: FaJs },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'React.js', icon: FaReact },
+  { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'Node.js', icon: FaNodeJs },
+  { name: 'Express.js', icon: SiExpress },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'Firebase', icon: SiFirebase },
+  { name: 'Git', icon: FaGitAlt },
+  { name: 'GitHub', icon: FaGithub },
+  { name: 'Vercel', icon: SiVercel }
 ];
 export const categories = ['All', 'React', 'Next.js', 'HTML/CSS'];
 
