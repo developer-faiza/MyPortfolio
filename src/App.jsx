@@ -15,8 +15,6 @@ export default function PortfolioTemplate() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -26,15 +24,16 @@ export default function PortfolioTemplate() {
         });
       },
       {
-        threshold: 0.6
+        rootMargin: '-80px 0px -60% 0px',
+        threshold: 0
       }
     );
 
-    sections.forEach(section => observer.observe(section));
+    document.querySelectorAll('section[id]').forEach(section => {
+      observer.observe(section);
+    });
 
-    return () => {
-      sections.forEach(section => observer.unobserve(section));
-    };
+    return () => observer.disconnect();
   }, []);
 
   const textRef = useRef(null);
@@ -394,7 +393,7 @@ export default function PortfolioTemplate() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white/2">
+      <section id="my-journey" className="py-24 px-6 bg-white/2">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">My Journey</h2>
 
