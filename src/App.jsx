@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+
+import { FiFolder, FiFileText, FiMail } from 'react-icons/fi';
 import about from './assets/about.png';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
@@ -91,9 +93,12 @@ export default function PortfolioTemplate() {
       </section>
 
       <About />
+
       <Skills />
+
       <Projects />
       <Contact />
+
       <Footer />
     </div>
   );
