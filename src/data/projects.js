@@ -39,9 +39,36 @@ export const skills = [
   { name: 'GitHub', icon: FaGithub },
   { name: 'Vercel', icon: SiVercel }
 ];
-export const categories = ['All', 'React', 'Next.js', 'HTML/CSS'];
+export const categories = ['All', 'React', 'Next.js', 'HTML/CSS', 'MERN'];
 
 export const projects = [
+  {
+    category: 'MERN',
+    title: 'MERN project with Admin-Panel',
+    tech: 'MongoDB + Express.js + React.js + Node.js',
+    desc: 'A full-stack MERN application featuring a responsive user-facing website and a dedicated admin dashboard. The project includes JWT-based authentication, protected routes, form validation, REST APIs, and complete CRUD functionality.',
+    image: images.mern1,
+    demo: 'https://mern-project-with-admin-panel.vercel.app',
+    github: 'https://github.com/developer-faiza/Mern-project-with-Admin-Panel'
+  },
+  {
+    category: 'MERN',
+    title: 'Coin-Bounce Website',
+    tech: 'MongoDB + Express.js + React.js + Node.js',
+    desc: 'Coin Bounce is a full-stack web application built with the MERN stack, designed with a user-friendly interface. The project demonstrates practical implementation of authentication, protected routes, REST APIs, database operations, and frontend-backend integration.',
+    image: images.mern2,
+    demo: 'https://coin-bounce-frontend.vercel.app',
+    github: 'https://github.com/developer-faiza/Coin-Bounce-MERN'
+  },
+  {
+    category: 'MERN',
+    title: 'Book Management System',
+    tech: 'MongoDB + Express.js + React.js + Node.js',
+    desc: 'Book Management System built using the MERN stack, allowing users to efficiently manage book records through a responsive and user-friendly interface. The project demonstrates practical implementation of CRUD operations, REST APIs, and frontend-backend integration.',
+    image: images.mern3,
+    demo: 'https://book-store-mern-inky.vercel.app',
+    github: 'https://github.com/developer-faiza/Book-Store-MERN'
+  },
   {
     category: 'React',
     title: 'React Portfolio Website',

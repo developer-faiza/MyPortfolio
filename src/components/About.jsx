@@ -18,7 +18,7 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center">
-                <h3 className="text-3xl font-bold text-pink-400">40+</h3>
+                <h3 className="text-3xl font-bold text-pink-400">45+</h3>
                 <p className="text-gray-300 mt-2">Projects</p>
               </div>
 

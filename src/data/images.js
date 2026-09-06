@@ -41,6 +41,9 @@ import todoreact from '../assets/todoreact.png';
 import weather from '../assets/weather.png';
 import figmatohtml from '../assets/figmatohtml.png';
 import portfolio1 from '../assets/portfolio1.png';
+import mern1 from '../assets/mern1.png';
+import mern2 from '../assets/mern2.png';
+import mern3 from '../assets/mern3.png';
 
 const images = {
   sm,
@@ -85,6 +88,9 @@ const images = {
   todoreact,
   weather,
   figmatohtml,
-  portfolio1
+  portfolio1,
+  mern1,
+  mern2,
+  mern3,
 };
 export default images;
