@@ -44,7 +44,16 @@ export const categories = ['All', 'React', 'Next.js', 'HTML/CSS', 'MERN'];
 export const projects = [
   {
     category: 'MERN',
-    title: 'MERN project with Admin-Panel',
+    title: 'Pursiva Shopping Website',
+    tech: 'MongoDB + Express.js + React.js + Node.js',
+    desc: 'Pursiva is a full-stack e-commerce platform featuring a modern customer shopping experience and a complete owner dashboard for managing products, customers, orders, and store operations. Built from scratch with a focus on usability, functionality, and real-world e-commerce workflows.',
+    image: images.pursiva,
+    demo: 'https://pursiva-six.vercel.app',
+    github: 'https://github.com/developer-faiza/Pursiva'
+  },
+  {
+    category: 'MERN',
+    title: 'MERN Project with Admin-Panel',
     tech: 'MongoDB + Express.js + React.js + Node.js',
     desc: 'A full-stack MERN application featuring a responsive user-facing website and a dedicated admin dashboard. The project includes JWT-based authentication, protected routes, form validation, REST APIs, and complete CRUD functionality.',
     image: images.mern1,

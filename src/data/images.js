@@ -44,6 +44,7 @@ import portfolio1 from '../assets/portfolio1.png';
 import mern1 from '../assets/mern1.png';
 import mern2 from '../assets/mern2.png';
 import mern3 from '../assets/mern3.png';
+import pursiva from '../assets/pursiva.png';
 
 const images = {
   sm,
@@ -92,5 +93,6 @@ const images = {
   mern1,
   mern2,
   mern3,
+  pursiva
 };
 export default images;
